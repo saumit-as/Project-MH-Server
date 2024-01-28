@@ -1,4 +1,6 @@
-import deta from "Deta";
+import { Deta } from "deta";
+
+const deta = Deta();
 
 export const userDb = deta.Base("users");
 export const profileDb = deta.Base("profiles");

@@ -32,6 +32,7 @@ export interface TaskSet {
 export interface Tasks {
   key: string;
   name: string;
-  urgency: "urgent" | "not urgent" | "unassigned";
-  priority: "important" | "not important" | "unassigned";
+  urgency: "urgent" | "not urgent";
+  priority: "important" | "not important";
+  duration: string;
 }
