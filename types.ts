@@ -23,16 +23,18 @@ export interface Habit {
   streak: number;
 }
 
-export interface TaskSet {
+// export interface TaskSet {
+//   key: string;
+//   email: string;
+//   tasks: Tasks[];
+// }
+
+export interface Task {
   key: string;
   email: string;
-  tasks: Tasks[];
-}
-
-export interface Tasks {
-  key: string;
   name: string;
   urgency: "urgent" | "not urgent";
   priority: "important" | "not important";
   duration: string;
+  completed: boolean;
 }

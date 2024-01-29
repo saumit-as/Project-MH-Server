@@ -9,7 +9,7 @@ export const getDepressionQuestions = async () => {
   return data;
 };
 export const getAddictionQuestions = async () => {
-  const data = await questionsDb.get("addiction");
+  const data = await questionsDb.get("gamingAddiction");
   return data;
 };
 

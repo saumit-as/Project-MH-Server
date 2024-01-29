@@ -22,7 +22,7 @@ const getDepressionQuestions = () => __awaiter(void 0, void 0, void 0, function*
 });
 exports.getDepressionQuestions = getDepressionQuestions;
 const getAddictionQuestions = () => __awaiter(void 0, void 0, void 0, function* () {
-    const data = yield db_1.questionsDb.get("addiction");
+    const data = yield db_1.questionsDb.get("gamingAddiction");
     return data;
 });
 exports.getAddictionQuestions = getAddictionQuestions;

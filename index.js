@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const cors_1 = __importDefault(require("cors"));
 const express_1 = __importDefault(require("express"));
 const UserRoutes_1 = __importDefault(require("./routes/UserRoutes"));
+const AssesmentRoutes_1 = __importDefault(require("./routes/AssesmentRoutes"));
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)());
 app.use(express_1.default.json());
@@ -16,4 +17,9 @@ app.listen(port, () => {
 app.get("/", (req, res) => {
     res.send("Welcome to Express & TypeScript Server");
 });
+// app.get("/createAssesment", async (req, res) => {
+//   await questionsDb.put({ test: "jdfhjdh" });
+//   return true;
+// });
 app.use("/user", UserRoutes_1.default);
+app.use("/questions", AssesmentRoutes_1.default);
