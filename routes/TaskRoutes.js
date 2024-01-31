@@ -21,4 +21,27 @@ taskRouter.post("/create", (req, res) => __awaiter(void 0, void 0, void 0, funct
     const task = yield (0, TasksController_1.createTask)({ task: body });
     res.send(task);
 }));
+taskRouter.get("/get/:email", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const email = req.params.email;
+    const task = yield (0, TasksController_1.getTasks)(email);
+    console.log(task);
+    res.send(task);
+}));
+taskRouter.post("/complete", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const body = req.body;
+    console.log(body);
+    const task = yield (0, TasksController_1.markComplete)({ task: body });
+    res.send(task);
+}));
+taskRouter.patch("/edit", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const body = req.body;
+    console.log(body);
+    const task = yield (0, TasksController_1.editTask)({ task: body });
+    res.send(task);
+}));
+taskRouter.delete("/delete/:id", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const key = req.params.id;
+    const task = yield (0, TasksController_1.deleteTask)({ key: key });
+    res.send(task);
+}));
 exports.default = taskRouter;

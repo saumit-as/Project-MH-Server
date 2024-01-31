@@ -21,6 +21,8 @@ export interface Habit {
   date: string;
   duration: string;
   streak: number;
+  email: string;
+  lastCompleted: string;
 }
 
 // export interface TaskSet {
@@ -37,4 +39,5 @@ export interface Task {
   priority: "important" | "not important";
   duration: string;
   completed: boolean;
+  type: "task" | "habit";
 }

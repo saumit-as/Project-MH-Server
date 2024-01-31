@@ -1,8 +1,8 @@
 import cors from "cors";
 import express, { Request, Response, Application } from "express";
 import userRouter from "./routes/UserRoutes";
-import { questionsDb } from "./db";
 import questionsRouter from "./routes/AssesmentRoutes";
+import taskRouter from "./routes/TaskRoutes";
 
 const app: Application = express();
 app.use(cors());
@@ -21,3 +21,4 @@ app.get("/", (req: Request, res: Response) => {
 // });
 app.use("/user", userRouter);
 app.use("/questions", questionsRouter);
+app.use("/tasks", taskRouter);
