@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.tasksDb = exports.habitsDb = exports.questionsDb = exports.profileDb = exports.userDb = void 0;
+exports.diaryDb = exports.tasksDb = exports.habitsDb = exports.questionsDb = exports.profileDb = exports.userDb = void 0;
 const deta_1 = require("deta");
 const deta = (0, deta_1.Deta)();
 exports.userDb = deta.Base("users");
@@ -8,3 +8,4 @@ exports.profileDb = deta.Base("profiles");
 exports.questionsDb = deta.Base("questions");
 exports.habitsDb = deta.Base("habits");
 exports.tasksDb = deta.Base("tasks");
+exports.diaryDb = deta.Base("diary");

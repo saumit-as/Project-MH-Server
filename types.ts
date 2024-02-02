@@ -41,3 +41,13 @@ export interface Task {
   completed: boolean;
   type: "task" | "habit";
 }
+
+export interface DiaryEntry {
+  date: string;
+  contents: string;
+}
+
+export interface Diary {
+  key: string;
+  data: string;
+}

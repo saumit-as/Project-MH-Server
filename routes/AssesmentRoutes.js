@@ -24,7 +24,7 @@ questionsRouter.get("/depression", (req, res) => __awaiter(void 0, void 0, void 
     res.send(questions);
 }));
 questionsRouter.get("/gaming-addiction", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const questions = yield (0, AssesmentController_1.getAnxietyQuestions)();
+    const questions = yield (0, AssesmentController_1.getAddictionQuestions)();
     res.send(questions);
 }));
 exports.default = questionsRouter;

@@ -3,6 +3,7 @@ import { createUser } from "../controllers/UserControllers";
 import { createTask } from "../controllers/TasksController";
 import { Task } from "../types";
 import {
+  getAddictionQuestions,
   getAnxietyQuestions,
   getDepressionQuestions,
 } from "../controllers/AssesmentController";
@@ -19,7 +20,7 @@ questionsRouter.get("/depression", async (req, res) => {
   res.send(questions);
 });
 questionsRouter.get("/gaming-addiction", async (req, res) => {
-  const questions = await getAnxietyQuestions();
+  const questions = await getAddictionQuestions();
 
   res.send(questions);
 });
