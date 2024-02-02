@@ -12,7 +12,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.getTasks = exports.markComplete = exports.deleteTask = exports.editTask = exports.createTask = void 0;
 const db_1 = require("../db");
 const createTask = ({ task }) => __awaiter(void 0, void 0, void 0, function* () {
-    console.log("saumit", task);
     const taskCreated = yield db_1.tasksDb.put(Object.assign({}, task));
     console.log(taskCreated);
     return taskCreated;

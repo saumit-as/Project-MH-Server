@@ -3,6 +3,7 @@ import express, { Request, Response, Application } from "express";
 import userRouter from "./routes/UserRoutes";
 import questionsRouter from "./routes/AssesmentRoutes";
 import taskRouter from "./routes/TaskRoutes";
+import { habitRouter } from "./routes/HabitRouter";
 
 const app: Application = express();
 app.use(cors());
@@ -22,3 +23,4 @@ app.get("/", (req: Request, res: Response) => {
 app.use("/user", userRouter);
 app.use("/questions", questionsRouter);
 app.use("/tasks", taskRouter);
+app.use("/habits", habitRouter);

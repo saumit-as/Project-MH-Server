@@ -2,7 +2,6 @@ import { habitsDb, tasksDb } from "../db";
 import { Habit, Task } from "../types";
 
 export const createTask = async ({ task }: { task: Task }) => {
-  console.log("saumit", task);
   const taskCreated = await tasksDb.put({ ...task });
   console.log(taskCreated);
   return taskCreated;
