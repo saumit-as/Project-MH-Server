@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.addContent = exports.createDiary = void 0;
+exports.deleteDiary = exports.getDiary = exports.addContent = exports.createDiary = void 0;
 const db_1 = require("../db");
 const createDiary = (diaryEntry) => __awaiter(void 0, void 0, void 0, function* () {
     const data = yield db_1.diaryDb.put(Object.assign({}, diaryEntry));
@@ -22,7 +22,23 @@ const addContent = ({ key, diaryEntry, }) => __awaiter(void 0, void 0, void 0, f
         const data = yield (0, exports.createDiary)(diaryEntry);
         return data;
     }
+    const dataAdd = db_1.diaryDb.update({ data: diaryEntry.data }, key);
+    return dataAdd;
     //   const data = { data: diaryEntry.date, date: diaryEntry };
     //   const dataAdd = await diaryDb.update({});
 });
 exports.addContent = addContent;
+const getDiary = (key) => __awaiter(void 0, void 0, void 0, function* () {
+    const diary = yield db_1.diaryDb.get(key);
+    if (!diary) {
+        const data = yield (0, exports.createDiary)({ data: "", key: key });
+        return data;
+    }
+    return diary;
+});
+exports.getDiary = getDiary;
+const deleteDiary = (key) => __awaiter(void 0, void 0, void 0, function* () {
+    const deletes = yield db_1.diaryDb.delete(key);
+    return deletes;
+});
+exports.deleteDiary = deleteDiary;
