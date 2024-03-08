@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.createUser = void 0;
+exports.getUser = exports.updateScore = exports.createUser = void 0;
 const db_1 = require("../db");
 const ProfileController_1 = require("./ProfileController");
 const createUser = ({ email, userId, username, }) => __awaiter(void 0, void 0, void 0, function* () {
@@ -19,6 +19,9 @@ const createUser = ({ email, userId, username, }) => __awaiter(void 0, void 0, v
             username: username,
             userId: userId,
             profileCompleted: false,
+            anxiety: 0,
+            depression: 0,
+            gamingAddiction: 0,
         };
         yield db_1.userDb.put(Object.assign({}, userData));
         yield (0, ProfileController_1.createProfile)(email);
@@ -29,3 +32,11 @@ const createUser = ({ email, userId, username, }) => __awaiter(void 0, void 0, v
     }
 });
 exports.createUser = createUser;
+const updateScore = ({ email, category, score, }) => __awaiter(void 0, void 0, void 0, function* () {
+    yield db_1.userDb.update({ [category]: score }, email);
+});
+exports.updateScore = updateScore;
+const getUser = (email) => __awaiter(void 0, void 0, void 0, function* () {
+    return yield db_1.userDb.get(email);
+});
+exports.getUser = getUser;

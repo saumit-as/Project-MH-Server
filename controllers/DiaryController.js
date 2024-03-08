@@ -22,7 +22,7 @@ const addContent = ({ key, diaryEntry, }) => __awaiter(void 0, void 0, void 0, f
         const data = yield (0, exports.createDiary)(diaryEntry);
         return data;
     }
-    const dataAdd = db_1.diaryDb.update({ data: diaryEntry.data }, key);
+    const dataAdd = db_1.diaryDb.update({ data: diaryEntry.data, advice: diaryEntry.advice }, key);
     return dataAdd;
     //   const data = { data: diaryEntry.date, date: diaryEntry };
     //   const dataAdd = await diaryDb.update({});

@@ -7,6 +7,7 @@ import { habitRouter } from "./routes/HabitRouter";
 import { diaryRouter } from "./routes/DiaryRoutes";
 import { Server } from "socket.io";
 import { createServer } from "node:http";
+import { emotionRouter } from "./routes/emotion";
 
 const app: Application = express();
 const server = createServer(app);
@@ -34,3 +35,4 @@ app.use("/questions", questionsRouter);
 app.use("/tasks", taskRouter);
 app.use("/habits", habitRouter);
 app.use("/diary", diaryRouter);
+app.use("/emotion", emotionRouter);

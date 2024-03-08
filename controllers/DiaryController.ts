@@ -19,7 +19,10 @@ export const addContent = async ({
     return data;
   }
 
-  const dataAdd = diaryDb.update({ data: diaryEntry.data }, key);
+  const dataAdd = diaryDb.update(
+    { data: diaryEntry.data, advice: diaryEntry.advice },
+    key
+  );
   return dataAdd;
 
   //   const data = { data: diaryEntry.date, date: diaryEntry };

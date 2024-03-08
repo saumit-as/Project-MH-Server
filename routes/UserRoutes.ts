@@ -1,5 +1,9 @@
 import express from "express";
-import { createUser } from "../controllers/UserControllers";
+import {
+  createUser,
+  getUser,
+  updateScore,
+} from "../controllers/UserControllers";
 const userRouter = express.Router();
 
 userRouter.post("/create", async (req, res) => {
@@ -14,4 +18,17 @@ userRouter.post("/create", async (req, res) => {
   res.send(user);
 });
 
+userRouter.post("/setScore", async (req, res) => {
+  const body = req.body;
+  const update = await updateScore({ ...body });
+  res.send(update);
+});
+
+userRouter.get("/get/:email", async (req, res) => {
+  const email = req.params.email;
+
+  const task = await getUser(email);
+  console.log(task);
+  res.send(task);
+});
 export default userRouter;

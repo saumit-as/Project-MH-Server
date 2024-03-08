@@ -3,6 +3,9 @@ export interface User {
   key: string;
   userId: string;
   profileCompleted: boolean;
+  gamingAddiction: number;
+  anxiety: number;
+  depression: number;
   //   profileId: string;
 }
 
@@ -50,4 +53,5 @@ export interface DiaryEntry {
 export interface Diary {
   key: string;
   data: string;
+  advice?: string;
 }
